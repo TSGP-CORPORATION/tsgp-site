@@ -1,0 +1,172 @@
+/* Contact Bar Styles */
+.contact-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 3rem;
+  background-color: #2a2a2a;
+  min-height: 36px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.contact-bar.hidden {
+  transform: translateY(-100%);
+}
+
+/* Left Section - Contact Info */
+.contact-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.contact-item svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.contact-item svg path,
+.contact-item svg rect {
+  stroke: #ffffff;
+}
+
+.contact-item span {
+  font-size: 0.8rem;
+  color: #ffffff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Right Section - Social Media */
+.contact-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.social-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.social-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.social-icon svg path,
+.social-icon svg rect {
+  stroke: #ffffff;
+}
+
+.social-icon svg circle[fill] {
+  fill: #ffffff;
+}
+
+/* Responsive Design */
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .contact-bar {
+    padding: 0.5rem 2rem;
+  }
+  
+  .contact-bar-left {
+    gap: 1.5rem;
+  }
+  
+  .contact-item span {
+    font-size: 0.8rem;
+  }
+}
+
+/* Small Tablet (768px and below) */
+@media (max-width: 768px) {
+  .contact-bar {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .contact-bar-left {
+    gap: 1rem;
+  }
+  
+  .contact-item {
+    gap: 0.4rem;
+  }
+  
+  .contact-item span {
+    font-size: 0.75rem;
+  }
+  
+  .contact-bar-right {
+    gap: 0.75rem;
+  }
+  
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Mobile (640px and below) */
+@media (max-width: 640px) {
+  .contact-bar {
+    padding: 0.75rem 1rem;
+    min-height: auto;
+  }
+  
+  .contact-bar-left {
+    gap: 0.75rem;
+  }
+  
+  .contact-item span {
+    font-size: 0.7rem;
+  }
+  
+  .contact-bar-right {
+    gap: 0.5rem;
+  }
+}
+
+/* Small Mobile (480px and below) - Hide contact bar on mobile */
+@media (max-width: 480px) {
+  .contact-bar {
+    display: none;
+  }
+}
+
+/* Extra Small Mobile (375px and below) */
+@media (max-width: 375px) {
+  .contact-bar {
+    display: none;
+  }
+}
