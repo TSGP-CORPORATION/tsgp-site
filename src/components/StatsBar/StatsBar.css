@@ -1,0 +1,122 @@
+/* Stats Bar */
+.stats-bar {
+  background-color: var(--color-dark);
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.stat-item {
+  text-align: center;
+  padding: var(--space-md);
+  position: relative;
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.stat-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stat-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stat-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stat-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-value {
+  font-family: var(--font-header);
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  margin-bottom: var(--space-xs);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-medium-grey);
+  font-weight: var(--weight-regular);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+  
+  .stat-item:nth-child(2)::after {
+    display: none;
+  }
+  
+  .stat-value {
+    font-size: var(--text-4xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-bar {
+    padding: var(--space-xl) 0;
+  }
+  
+  .stats-container {
+    padding: 0 var(--space-md);
+    gap: var(--space-md);
+  }
+  
+  .stat-value {
+    font-size: var(--text-3xl);
+  }
+  
+  .stat-label {
+    font-size: var(--text-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-item::after {
+    display: none;
+  }
+}

@@ -3,26 +3,17 @@ import './ContactBar.css'
 
 const ContactBar = () => {
   const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      
-      // Hide contact bar when scrolling down, show when scrolling up
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsVisible(false)
-      } else {
-        setIsVisible(true)
-      }
-      
-      setLastScrollY(currentScrollY)
+      // Only show contact bar when at the very top of the page
+      setIsVisible(window.scrollY === 0)
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+  }, [])
 
   return (
     <div className={`contact-bar ${!isVisible ? 'hidden' : ''}`}>

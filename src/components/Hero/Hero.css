@@ -1,0 +1,191 @@
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://www.yankodesign.com/images/design_news/2020/06/all-black-desk-setups-that-will-inspire-you-to-adapt-this-modern-minimal-trend/01-Black-Desk-Setup_-minimal_modern_hero3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  image-rendering: auto;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 30, 80, 0.78) 0%, rgba(10, 30, 60, 0.60) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  padding: 0 var(--space-xl);
+  text-align: left;
+  color: var(--color-white);
+}
+
+.hero-title {
+  font-family: var(--font-header);
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-subtitle-inline {
+  display: block;
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+  margin-top: var(--space-sm);
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.hero-description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 800px;
+  margin: 0 0 var(--space-2xl);
+  font-weight: var(--weight-regular);
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-header);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.hero-btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+  border: 2px solid var(--color-accent);
+}
+
+.hero-btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-btn-primary svg {
+  transition: transform var(--transition-base);
+}
+
+.hero-btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.hero-btn-secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+}
+
+.hero-btn-secondary:hover {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: var(--text-4xl);
+  }
+  
+  .hero-subtitle-inline {
+    font-size: var(--text-xl);
+  }
+  
+  .hero-description {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    background-attachment: scroll;
+  }
+  
+  .hero-content {
+    padding: 0 var(--space-md);
+  }
+  
+  .hero-title {
+    font-size: var(--text-3xl);
+  }
+  
+  .hero-subtitle-inline {
+    font-size: var(--text-lg);
+  }
+  
+  .hero-description {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+  
+  .hero-btn {
+    justify-content: center;
+    width: 100%;
+    padding: 0.875rem 2rem;
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: var(--text-2xl);
+  }
+  
+  .hero-subtitle-inline {
+    font-size: var(--text-base);
+    margin-top: 0.5rem;
+  }
+  
+  .hero-description {
+    font-size: var(--text-xs);
+  }
+  
+  .hero-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--text-sm);
+  }
+}

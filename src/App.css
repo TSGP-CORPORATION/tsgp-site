@@ -1,41 +1,10 @@
 .App {
   width: 100%;
-  min-height: calc(100vh - 100px); 
-  background-color: #ffffff;
-  padding: 2rem 3rem;
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-white);
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-}
-
-/* Responsive padding adjustments */
-@media (max-width: 1024px) {
-  .App {
-    padding: 2rem 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .App {
-    padding: 1.5rem 1.5rem;
-    min-height: calc(100vh - 120px);
-  }
-}
-
-@media (max-width: 640px) {
-  .App {
-    padding: 1.5rem 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .App {
-    padding: 1.25rem 0.875rem;
-    min-height: calc(100vh - 56px); /* Only navbar height on mobile */
-  }
-}
-
-@media (max-width: 375px) {
-  .App {
-    padding: 1rem 0.75rem;
-    min-height: calc(100vh - 56px); /* Only navbar height on mobile */
-  }
+  overflow-x: hidden;
 }

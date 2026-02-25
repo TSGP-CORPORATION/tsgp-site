@@ -1,0 +1,123 @@
+/* Testimonial Card */
+.testimonial-card {
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  background-color: var(--color-white);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  z-index: 10;
+  animation: scaleIn 0.8s ease-out 0.6s backwards;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.testimonial-quote-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+}
+
+.testimonial-text {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  line-height: 1.7;
+  color: var(--color-dark);
+  font-weight: var(--weight-medium);
+  margin-bottom: var(--space-xl);
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.testimonial-author-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-accent);
+}
+
+.testimonial-author-info {
+  flex: 1;
+}
+
+.testimonial-author-name {
+  font-family: var(--font-header);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-dark);
+  margin: 0 0 4px 0;
+}
+
+.testimonial-author-role {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.testimonial-navigation {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.testimonial-nav-button {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.testimonial-nav-button:hover {
+  background-color: var(--color-accent-hover);
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .testimonial-card {
+    position: static;
+    max-width: 100%;
+    margin-top: var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: var(--space-xl);
+  }
+  
+  .testimonial-text {
+    font-size: var(--text-lg);
+  }
+}

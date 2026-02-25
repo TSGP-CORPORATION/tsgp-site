@@ -47,18 +47,8 @@ const NavBar = () => {
       <div className="nav-bar">
         <div className="nav-bar-left">
           <div className="logo-container">
-            {/* Asterisk/Star logo matching company branding */}
-            <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Center vertical bar */}
-              <rect x="42" y="10" width="16" height="80" fill="white"/>
-              {/* Center horizontal bar */}
-              <rect x="10" y="42" width="80" height="16" fill="white"/>
-              {/* Diagonal bar (top-left to bottom-right) */}
-              <rect x="42" y="10" width="16" height="80" fill="white" transform="rotate(45 50 50)"/>
-              {/* Diagonal bar (top-right to bottom-left) */}
-              <rect x="42" y="10" width="16" height="80" fill="white" transform="rotate(-45 50 50)"/>
-            </svg>
-            <span className="company-name">Tsgp Corporation</span>
+            <img src="/src/assets/53c0d178-b698-4c51-bc93-229132f6fc51 - Modifié.png" alt="" />
+
           </div>
         </div>
         
