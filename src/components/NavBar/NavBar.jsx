@@ -47,7 +47,7 @@ const NavBar = () => {
       <div className="nav-bar">
         <div className="nav-bar-left">
           <div className="logo-container">
-            <img src="/src/assets/53c0d178-b698-4c51-bc93-229132f6fc51 - Modifié.png" alt="" />
+            <img src="/53c0d178-b698-4c51-bc93-229132f6fc51 - Modifié.png" alt="" />
 
           </div>
         </div>
