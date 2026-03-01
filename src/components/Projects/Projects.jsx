@@ -8,39 +8,12 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'Modern Construction',
-      category: 'CONSTRUCTION',
-      description: 'Expert craftsmanship in modern building techniques',
-      image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg',
-      size: 'large'
-    },
-    {
-      title: 'Precision Work',
-      category: 'CONSTRUCTION',
-      description: 'Detailed measurement and quality control',
-      image: 'https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg',
-      size: 'medium'
-    },
-    {
-      title: 'Interior Finishing',
-      category: 'CONSTRUCTION',
-      description: 'Professional painting and finishing services',
-      image: 'https://images.pexels.com/photos/1669754/pexels-photo-1669754.jpeg',
-      size: 'medium'
-    },
-    {
-      title: 'Quality Painting',
-      category: 'CONSTRUCTION',
-      description: 'Expert painting with attention to detail',
-      image: 'https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg',
-      size: 'large'
-    },
-    {
-      title: 'Project Planning',
-      category: 'CONSTRUCTION',
-      description: 'Comprehensive blueprint review and planning',
-      image: 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg',
-      size: 'medium'
+      title: 'New World Technology',
+      category: 'WEB DEVELOPMENT',
+      description: 'A full-featured school website for a vocational training institution specializing in tech, electrical & solar training. Built for performance, clarity, and a seamless student experience.',
+      image: '/Pasted image.png',
+      size: 'large',
+      link: 'https://newworldtechnology.org/'
     }
   ]
 
@@ -75,7 +48,7 @@ const Projects = () => {
           </div>
           <h1 className="projects-hero-title">Discover Our Projects</h1>
           <p className="projects-hero-subtitle">
-            Inspiring expert on-site designed to deliver quality and innovation in every project we undertake
+            From concept to deployment, we build digital products that make an impact. Here's a look at what we've shipped so far.
           </p>
         </div>
 
@@ -96,7 +69,7 @@ const Projects = () => {
                 <div className="project-card-overlay">
                   <span className="project-card-category">{project.category}</span>
                   <p className="project-card-description">{project.description}</p>
-                  <button className="project-card-button">
+                  <button className="project-card-button" onClick={() => window.open(project.link, '_blank')}>
                     <ArrowRight size={24} />
                   </button>
                 </div>

@@ -8,22 +8,10 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      text: "Exceeded expectations, on time, within budget!",
-      authorName: "Jane Doe",
-      authorRole: "Property Developer",
-      authorImage: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100"
-    },
-    {
-      text: "Outstanding craftsmanship and attention to detail. Highly recommended!",
-      authorName: "John Smith",
-      authorRole: "Homeowner",
-      authorImage: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100"
-    },
-    {
-      text: "Professional team that delivered beyond our expectations. Will work with them again!",
-      authorName: "Sarah Johnson",
-      authorRole: "Business Owner",
-      authorImage: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100"
+      text: "Working with this team was a great experience from start to finish. They delivered our school website on time, exactly as promised, and the quality of the work truly exceeded what we had in mind. They understood our vision and translated it into a clean, professional platform that represents our institution perfectly.",
+      authorName: "Founder",
+      authorRole: "Founder, New World Technology Vocational Training",
+      authorImage: "https://lh3.googleusercontent.com/p/AF1QipOrwFtY46OyIMbwHvXqSDW4pFXhVlNYnYtp5J2A=s680-w680-h510-rw"
     }
   ]
 
@@ -58,7 +46,7 @@ const Testimonials = () => {
           <div className="testimonials-right">
             <div className="testimonials-image-wrapper">
               <img 
-                src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgUKvTXYnPfUo3RIYujNfQcEiIgP_EiJ0z9A&s" 
                 alt="Construction professionals"
                 className="testimonials-image"
               />

@@ -65,13 +65,13 @@ const About = () => {
               Focused On Excellence In Every Project
             </h1>
             <p className="about-hero-text">
-              Our unwavering commitment to excellence drives every project we undertake. 
-              From concept to completion, we meticulously craft solutions that embody 
-              quality, precision and innovation.
+              We are a passionate tech company dedicated to building modern digital solutions. 
+              From concept to deployment, we craft products that are fast, beautiful, and built to scale — 
+              driven by a relentless pursuit of quality and innovation.
             </p>
             <div className="about-signature">
-              <p className="signature-name">Tinfeh Oliver and Tiojio Wilfried</p>
-              <p className="signature-title">Company CEO</p>
+              <p className="signature-name">Tinfeh & Wilfried</p>
+              <p className="signature-title">Founders</p>
             </div>
             <button className="about-cta-button">
               <span>CONTACT US</span>
@@ -83,8 +83,8 @@ const About = () => {
             <div className="about-image-frame"></div>
             <div className="about-image-wrapper">
               <img 
-                src="https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg" 
-                alt="Construction team reviewing blueprints" 
+                src="/WhatsApp Image 2026-03-01 at 23.02.29.jpeg" 
+                alt="Tech team collaborating" 
               />
             </div>
           </div>
@@ -95,27 +95,71 @@ const About = () => {
         <div className="about-stats-container">
           <div className="about-stat-item">
             <div className="about-stat-number">
-              <Counter end={99} suffix="%" delay={0} />
+              <Counter end={100} suffix="%" delay={0} />
             </div>
             <div className="about-stat-label">Client Satisfaction</div>
           </div>
           <div className="about-stat-item">
             <div className="about-stat-number">
-              <Counter end={800} suffix="+" delay={100} />
+              <Counter end={1} suffix="+" delay={100} />
             </div>
             <div className="about-stat-label">Successful Projects</div>
           </div>
           <div className="about-stat-item">
             <div className="about-stat-number">
-              <Counter end={32} suffix="k" delay={200} />
+              <Counter end={2} suffix="" delay={200} />
             </div>
-            <div className="about-stat-label">Happy Clients</div>
+            <div className="about-stat-label">Expert Developers</div>
           </div>
           <div className="about-stat-item">
             <div className="about-stat-number">
-              <Counter end={26} suffix="+" delay={300} />
+              <Counter end={1} suffix="+" delay={300} />
             </div>
             <div className="about-stat-label">Years of Experience</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Team Section */}
+      <div className="about-team">
+        <div className="about-team-container">
+          <span className="about-label">« THE TEAM »</span>
+          <h2 className="about-team-title">The Minds Behind The Work</h2>
+          <p className="about-team-subtitle">Two builders, one vision — crafting digital experiences that matter.</p>
+          <div className="about-team-grid">
+            <div className="about-team-card">
+              <div className="about-team-card-image-wrapper">
+                <img
+                  src="/WhatsApp Image 2026-03-01 at 22.14.48.jpeg"
+                  alt="Tiojio Wilfried - CEO"
+                  className="about-team-card-image"
+                />
+                <div className="about-team-card-overlay">
+                  <div className="about-team-card-accent"></div>
+                </div>
+              </div>
+              <div className="about-team-card-info">
+                <h3 className="about-team-card-name">Tiojio Wilfried</h3>
+                <span className="about-team-card-role">Chief Executive Officer</span>
+              </div>
+            </div>
+
+            <div className="about-team-card">
+              <div className="about-team-card-image-wrapper">
+                <img
+                  src="/WhatsApp Image 2026-03-01 at 22.14.47.jpeg"
+                  alt="Tinfeh Oliver - CTO"
+                  className="about-team-card-image"
+                />
+                <div className="about-team-card-overlay">
+                  <div className="about-team-card-accent"></div>
+                </div>
+              </div>
+              <div className="about-team-card-info">
+                <h3 className="about-team-card-name">Tinfeh Oliver</h3>
+                <span className="about-team-card-role">Chief Technology Officer</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

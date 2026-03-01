@@ -8,19 +8,19 @@ const Features = () => {
     {
       icon: ShieldCheck,
       title: 'Quality Guaranteed',
-      description: 'We use only the finest materials and employ rigorous quality control measures on every project. Our commitment to excellence ensures structures that stand the test of time.',
+      description: 'We engineer every product with precision, backed by automated testing, code reviews, and rigorous QA pipelines. Our commitment to reliability means software that performs flawlessly at scale.',
       side: 'left'
     },
     {
       icon: Clock,
       title: 'On-Time Delivery',
-      description: 'Time is money, and we respect both. Our proven project management methodologies ensure your project is completed on schedule without compromising quality.',
+      description: 'We run lean, agile sprints with transparent milestones so you always know where your product stands. Deadlines are a commitment, not a suggestion.',
       side: 'right'
     },
     {
       icon: Users,
       title: 'Expert Team',
-      description: 'Our certified professionals bring decades of combined experience to every project. From architects to engineers, our team is dedicated to your success.',
+      description: 'Our engineers, designers, and product strategists bring deep technical expertise across a wide range of modern stacks and platforms — all focused on building solutions that drive real impact.',
       side: 'left'
     }
   ]
@@ -57,7 +57,7 @@ const Features = () => {
       <div className="features-header">
         <span className="features-label">Why Choose Us</span>
         <h2 className="features-title">
-          Your Trusted Construction Partner
+          L’innovation au service de chaque structure.
         </h2>
       </div>
 
