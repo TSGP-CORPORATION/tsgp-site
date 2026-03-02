@@ -1,0 +1,25 @@
+# TSGP Corporation - Robots.txt
+# This file tells search engines which pages they can crawl
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# Crawl delay in seconds
+Crawl-delay: 1
+
+# User-agent specific rules
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Sitemap location
+Sitemap: https://www.tsgpcorporation.com/sitemap.xml
+Sitemap: https://www.tsgpcorporation.com/sitemap-images.xml
