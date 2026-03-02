@@ -62,7 +62,7 @@
 
 .stat-value {
   font-family: var(--font-header);
-  font-size: var(--text-5xl);
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
   font-weight: var(--weight-bold);
   color: var(--color-white);
   margin-bottom: var(--space-xs);

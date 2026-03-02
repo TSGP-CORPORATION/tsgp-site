@@ -58,7 +58,7 @@
 
 .about-hero-title {
   font-family: var(--font-header);
-  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  font-size: clamp(var(--text-3xl), 7vw, var(--text-6xl));
   font-weight: var(--weight-bold);
   color: #2D3748;
   line-height: 1.2;

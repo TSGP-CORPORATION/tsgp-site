@@ -46,7 +46,7 @@
 
 .projects-hero-title {
   font-family: var(--font-header);
-  font-size: var(--text-6xl);
+  font-size: clamp(var(--text-3xl), 7vw, var(--text-6xl));
   font-weight: var(--weight-bold);
   color: var(--color-dark);
   line-height: 1.1;

@@ -29,7 +29,7 @@
 
 .faq-hero-title {
   font-family: var(--font-header);
-  font-size: clamp(32px, 5vw, 42px);
+  font-size: clamp(var(--text-2xl), 5vw, 42px);
   font-weight: var(--weight-bold);
   color: #2D3748;
   line-height: 1.2;

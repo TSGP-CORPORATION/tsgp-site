@@ -26,27 +26,27 @@
   --weight-semibold: 600;
   --weight-bold: 700;
   
-  /* Font Sizes */
-  --text-xs: 0.75rem;    /* 12px */
-  --text-sm: 0.875rem;   /* 14px */
-  --text-base: 1rem;     /* 16px */
-  --text-lg: 1.125rem;   /* 18px */
-  --text-xl: 1.25rem;    /* 20px */
-  --text-2xl: 1.5rem;    /* 24px */
-  --text-3xl: 1.875rem;  /* 30px */
-  --text-4xl: 2.25rem;   /* 36px */
-  --text-5xl: 3rem;      /* 48px */
-  --text-6xl: 3.75rem;   /* 60px */
-  --text-7xl: 4.5rem;    /* 72px */
+  /* Font Sizes - Using clamp() for fluid typography */
+  --text-xs: clamp(0.65rem, 1.5vw, 0.75rem);     /* 12px */
+  --text-sm: clamp(0.8rem, 2vw, 0.875rem);       /* 14px */
+  --text-base: clamp(0.9rem, 2.2vw, 1rem);       /* 16px */
+  --text-lg: clamp(1rem, 2.5vw, 1.125rem);       /* 18px */
+  --text-xl: clamp(1.1rem, 2.8vw, 1.25rem);      /* 20px */
+  --text-2xl: clamp(1.3rem, 3.2vw, 1.5rem);      /* 24px */
+  --text-3xl: clamp(1.6rem, 4vw, 1.875rem);      /* 30px */
+  --text-4xl: clamp(1.9rem, 5vw, 2.25rem);       /* 36px */
+  --text-5xl: clamp(2.3rem, 6vw, 3rem);          /* 48px */
+  --text-6xl: clamp(3rem, 7vw, 3.75rem);         /* 60px */
+  --text-7xl: clamp(3.5rem, 8vw, 4.5rem);        /* 72px */
   
-  /* Spacing */
-  --space-xs: 0.5rem;    /* 8px */
-  --space-sm: 1rem;      /* 16px */
-  --space-md: 1.5rem;    /* 24px */
-  --space-lg: 2rem;      /* 32px */
-  --space-xl: 3rem;      /* 48px */
-  --space-2xl: 4rem;     /* 64px */
-  --space-3xl: 6rem;     /* 96px */
+  /* Spacing - Responsive spacing using clamp() */
+  --space-xs: clamp(0.4rem, 1.5vw, 0.5rem);     /* 8px */
+  --space-sm: clamp(0.875rem, 2.5vw, 1rem);     /* 16px */
+  --space-md: clamp(1.2rem, 3vw, 1.5rem);       /* 24px */
+  --space-lg: clamp(1.5rem, 3.5vw, 2rem);       /* 32px */
+  --space-xl: clamp(2rem, 4.5vw, 3rem);         /* 48px */
+  --space-2xl: clamp(2.5rem, 5.5vw, 4rem);      /* 64px */
+  --space-3xl: clamp(3rem, 6.5vw, 6rem);        /* 96px */
   
   /* Border Radius */
   --radius-sm: 4px;
@@ -96,6 +96,28 @@ html {
 a, button {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+}
+
+/* Ensure buttons have minimum touch target size (44x44px) */
+button, a[role="button"], .btn-like {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Improve form inputs on mobile */
+input, textarea, select {
+  min-height: 44px;
+  padding: 0.75rem;
+}
+
+/* Ensure clickable elements are properly spaced on mobile */
+@media (max-width: 768px) {
+  button, a[role="button"], .btn-like {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0.875rem 1.75rem;
+  }
 }
 
 /* Ensure images are responsive by default */
@@ -205,5 +227,32 @@ img {
   .section-container {
     padding: 0 var(--space-md);
     max-width: 100%;
+  }
+  
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading-1 {
+    font-size: var(--text-3xl);
+  }
+  
+  .heading-2 {
+    font-size: var(--text-2xl);
+  }
+  
+  .heading-3 {
+    font-size: var(--text-xl);
+  }
+  
+  .section-container {
+    padding: 0 var(--space-sm);
+    max-width: 100%;
+  }
+  
+  html {
+    font-size: 14px;
   }
 }
