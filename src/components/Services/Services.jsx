@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { ShieldCheck, Cpu, BarChart3, Wrench } from 'lucide-react'
 import './Services.css'
 
@@ -61,7 +61,7 @@ const Services = () => {
         </p>
       </div>
 
-      <motion.div 
+      <Motion.div 
         className="services-grid"
         variants={containerVariants}
         initial="hidden"
@@ -71,7 +71,7 @@ const Services = () => {
         {services.map((service, index) => {
           const Icon = service.icon
           return (
-            <motion.div 
+            <Motion.div 
               key={index}
               className="service-card"
               /*Variants allow you to define animation states and organise them by name. 
@@ -89,10 +89,10 @@ const Services = () => {
               </div>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
-            </motion.div>
+            </Motion.div>
           )
         })}
-      </motion.div>
+      </Motion.div>
     </section>
   )
 }

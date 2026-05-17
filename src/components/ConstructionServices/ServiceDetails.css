@@ -16,7 +16,7 @@
 
 .service-main-image {
   width: 100%;
-  height: 400px;
+  height: clamp(220px, 36vw, 400px);
   border-radius: var(--radius-md);
   overflow: hidden;
   margin-bottom: var(--space-xl);
@@ -109,7 +109,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .service-main-image {
-    height: 300px;
+    height: clamp(190px, 52vw, 300px);
   }
   
   .service-details-title {
@@ -123,5 +123,16 @@
   .service-cta-button {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-details-title {
+    font-size: var(--text-2xl);
+  }
+
+  .service-details-description,
+  .service-list-item {
+    font-size: var(--text-sm);
   }
 }

@@ -121,3 +121,17 @@
     font-size: var(--text-lg);
   }
 }
+
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: var(--space-lg);
+  }
+
+  .testimonial-text {
+    font-size: var(--text-base);
+  }
+
+  .testimonial-author {
+    align-items: flex-start;
+  }
+}

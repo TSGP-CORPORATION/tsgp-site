@@ -82,16 +82,32 @@
     flex-direction: row;
     overflow-x: auto;
     gap: var(--space-sm);
+    padding-bottom: var(--space-xs);
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
   }
   
   .menu-item {
     flex-direction: column;
-    min-width: 120px;
+    min-width: 132px;
     padding: var(--space-md);
     text-align: center;
+    scroll-snap-align: start;
   }
   
   .menu-label {
     font-size: var(--text-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-item {
+    min-width: 112px;
+    padding: var(--space-sm);
+  }
+
+  .menu-icon {
+    width: 42px;
+    height: 42px;
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { ShieldCheck, Clock, Users } from 'lucide-react'
 import './Features.css'
 
@@ -67,7 +67,7 @@ const Features = () => {
           const variants = feature.side === 'left' ? leftVariants : rightVariants
           
           return (
-            <motion.div 
+            <Motion.div 
               key={index}
               className={`feature-row feature-row-${feature.side}`}
               variants={variants}
@@ -85,7 +85,7 @@ const Features = () => {
                 <h3 className="feature-title">{feature.title}</h3>
                 <p className="feature-description">{feature.description}</p>
               </div>
-            </motion.div>
+            </Motion.div>
           )
         })}
       </div>

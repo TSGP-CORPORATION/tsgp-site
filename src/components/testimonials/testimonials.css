@@ -121,6 +121,8 @@
 .testimonials-image {
   width: 100%;
   height: auto;
+  max-height: 560px;
+  object-fit: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
   display: block;
@@ -171,6 +173,10 @@
   
   .testimonials-image-wrapper {
     overflow: hidden;
+  }
+
+  .testimonials-image {
+    max-height: 420px;
   }
 }
 

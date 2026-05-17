@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import './CTA.css'
 
 const CTA = () => {
@@ -31,7 +31,7 @@ const CTA = () => {
   return (
     <section className="cta" id="contact">
       <div className="cta-overlay"></div>
-      <motion.div 
+      <Motion.div 
         className="cta-content"
         variants={containerVariants}
         initial="hidden"
@@ -45,7 +45,7 @@ const CTA = () => {
           Let's transform your vision into reality. Our team of experts is ready to 
           discuss your project requirements and provide a comprehensive solution.
         </p>
-        <motion.a 
+        <Motion.a 
           href="#contact" 
           className="cta-button"
           variants={buttonVariants}
@@ -56,7 +56,7 @@ const CTA = () => {
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M7.5 4.16669L13.3333 10L7.5 15.8334" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-        </motion.a>
+        </Motion.a>
         
         <div className="cta-contact-info">
           <div className="cta-contact-item">
@@ -74,7 +74,7 @@ const CTA = () => {
             <span>tsgp-corporation@gmail.com</span>
           </div>
         </div>
-      </motion.div>
+      </Motion.div>
     </section>
   )
 }

@@ -34,7 +34,7 @@
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--space-2xl);
 }
 
@@ -63,7 +63,7 @@
 
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--space-lg);
 }
 
@@ -161,6 +161,7 @@
 .contact-info-item {
   display: flex;
   gap: var(--space-md);
+  min-width: 0;
 }
 
 .contact-icon {
@@ -315,6 +316,10 @@
   .contact-info-card,
   .contact-cta-card {
     padding: var(--space-lg);
+  }
+
+  .contact-info-item {
+    flex-direction: column;
   }
   
   .form-input,

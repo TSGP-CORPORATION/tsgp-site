@@ -95,6 +95,7 @@
   align-items: center;
   gap: var(--space-xs);
   color: rgba(255, 255, 255, 0.95);
+  min-width: 0;
 }
 
 .cta-contact-item svg {
@@ -166,5 +167,6 @@
   
   .cta-contact-item span {
     font-size: var(--text-sm);
+    overflow-wrap: anywhere;
   }
 }

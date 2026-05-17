@@ -2,6 +2,38 @@ import React, { useState, useEffect, useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
 import './About.css'
 
+const Counter = ({ end, suffix = '', duration = 2000, delay = 0, isVisible }) => {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    const startTime = Date.now() + delay
+    const animate = () => {
+      const now = Date.now()
+      const elapsed = now - startTime
+
+      if (elapsed < 0) {
+        requestAnimationFrame(animate)
+        return
+      }
+
+      const progress = Math.min(elapsed / duration, 1)
+      const easeOut = 1 - Math.pow(1 - progress, 3)
+
+      setCount(Math.floor(easeOut * end))
+
+      if (progress < 1) {
+        requestAnimationFrame(animate)
+      }
+    }
+
+    requestAnimationFrame(animate)
+  }, [isVisible, end, duration, delay])
+
+  return <span>{count}{suffix}</span>
+}
+
 const About = () => {
   const [countersVisible, setCountersVisible] = useState(false)
   const statsRef = useRef(null)
@@ -22,38 +54,6 @@ const About = () => {
 
     return () => observer.disconnect()
   }, [])
-
-  const Counter = ({ end, suffix = '', duration = 2000, delay = 0 }) => {
-    const [count, setCount] = useState(0)
-
-    useEffect(() => {
-      if (!countersVisible) return
-
-      const startTime = Date.now() + delay
-      const animate = () => {
-        const now = Date.now()
-        const elapsed = now - startTime
-        
-        if (elapsed < 0) {
-          requestAnimationFrame(animate)
-          return
-        }
-
-        const progress = Math.min(elapsed / duration, 1)
-        const easeOut = 1 - Math.pow(1 - progress, 3)
-        
-        setCount(Math.floor(easeOut * end))
-
-        if (progress < 1) {
-          requestAnimationFrame(animate)
-        }
-      }
-
-      requestAnimationFrame(animate)
-    }, [countersVisible, end, duration, delay])
-
-    return <span>{count}{suffix}</span>
-  }
 
   return (
     <section className="about-hero" id="about">
@@ -95,25 +95,25 @@ const About = () => {
         <div className="about-stats-container">
           <div className="about-stat-item">
             <div className="about-stat-number">
-              <Counter end={100} suffix="%" delay={0} />
+              <Counter end={100} suffix="%" delay={0} isVisible={countersVisible} />
             </div>
             <div className="about-stat-label">Client Satisfaction</div>
           </div>
           <div className="about-stat-item">
             <div className="about-stat-number">
-              <Counter end={1} suffix="+" delay={100} />
+              <Counter end={1} suffix="+" delay={100} isVisible={countersVisible} />
             </div>
             <div className="about-stat-label">Successful Projects</div>
           </div>
           <div className="about-stat-item">
             <div className="about-stat-number">
-              <Counter end={2} suffix="" delay={200} />
+              <Counter end={2} suffix="" delay={200} isVisible={countersVisible} />
             </div>
             <div className="about-stat-label">Expert Developers</div>
           </div>
           <div className="about-stat-item">
             <div className="about-stat-number">
-              <Counter end={1} suffix="+" delay={300} />
+              <Counter end={1} suffix="+" delay={300} isVisible={countersVisible} />
             </div>
             <div className="about-stat-label">Years of Experience</div>
           </div>
