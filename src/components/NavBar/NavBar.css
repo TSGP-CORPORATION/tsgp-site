@@ -52,7 +52,7 @@
 .nav-bar-right {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 /* Menu Links */
@@ -86,16 +86,15 @@
 .language-switcher {
   display: inline-flex;
   align-items: center;
-  flex-shrink: 0;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 4px;
   overflow: hidden;
 }
 
 .language-button {
-  min-width: 42px;
+  min-width: 44px;
   min-height: 34px;
-  padding: 0.35rem 0.55rem;
+  padding: 0.35rem 0.6rem;
   border: 0;
   background: transparent;
   color: #ffffff;
@@ -108,7 +107,7 @@
 
 .language-button:hover,
 .language-button.active {
-  background-color: #F5A623;
+  background: #F5A623;
   color: #1a1a1a;
 }
 
@@ -217,8 +216,8 @@
   }
 
   .language-button {
-    min-width: 38px;
-    padding: 0.3rem 0.45rem;
+    min-width: 40px;
+    padding: 0.3rem 0.5rem;
   }
 }
 
@@ -293,6 +292,10 @@
     display: block;
     opacity: 1;
   }
+
+  .language-switcher {
+    flex-shrink: 0;
+  }
 }
 
 /* Small Tablet / Large Mobile (768px and below) */
@@ -351,6 +354,15 @@
     margin-top: 2rem;
     padding: 0.75rem 1.25rem;
     font-size: 0.9rem;
+  }
+
+  .language-switcher {
+    width: 100%;
+    margin-top: 1.25rem;
+  }
+
+  .language-button {
+    flex: 1;
   }
   
   .logo-container svg {

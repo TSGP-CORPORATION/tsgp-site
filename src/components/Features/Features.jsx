@@ -1,33 +1,18 @@
 import React from 'react'
 import { motion as Motion } from 'framer-motion'
 import { ShieldCheck, Clock, Users } from 'lucide-react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './Features.css'
 
 const Features = () => {
+  const { t } = useLanguage()
+
   const features = [
-    {
-      icon: ShieldCheck,
-      title: 'Quality Guaranteed',
-      description: 'We engineer every product with precision, backed by automated testing, code reviews, and rigorous QA pipelines. Our commitment to reliability means software that performs flawlessly at scale.',
-      side: 'left'
-    },
-    {
-      icon: Clock,
-      title: 'On-Time Delivery',
-      description: 'We run lean, agile sprints with transparent milestones so you always know where your product stands. Deadlines are a commitment, not a suggestion.',
-      side: 'right'
-    },
-    {
-      icon: Users,
-      title: 'Expert Team',
-      description: 'Our engineers, designers, and product strategists bring deep technical expertise across a wide range of modern stacks and platforms — all focused on building solutions that drive real impact.',
-      side: 'left'
-    }
+    { icon: ShieldCheck, side: 'left', ...t.features.items[0] },
+    { icon: Clock, side: 'right', ...t.features.items[1] },
+    { icon: Users, side: 'left', ...t.features.items[2] },
   ]
 
-   /*Variants allow you to define animation states and organise them by name. 
-      They allow you to control animations 
-       throughout a component tree by switching a single animate prop */
   const leftVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: {
@@ -56,20 +41,18 @@ const Features = () => {
     <section className="features-wrapper">
       <div className="features">
       <div className="features-header">
-        <span className="features-label">Why Choose Us</span>
-        <h2 className="features-title">
-          L’innovation au service de chaque structure.
-        </h2>
+        <span className="features-label">{t.features.label}</span>
+        <h2 className="features-title">{t.features.title}</h2>
       </div>
 
       <div className="features-list">
-        {features.map((feature, index) => {
+        {features.map((feature) => {
           const Icon = feature.icon
           const variants = feature.side === 'left' ? leftVariants : rightVariants
-          
+
           return (
-            <Motion.div 
-              key={index}
+            <Motion.div
+              key={feature.title}
               className={`feature-row feature-row-${feature.side}`}
               variants={variants}
               initial="hidden"
@@ -81,7 +64,7 @@ const Features = () => {
                   <Icon size={48} strokeWidth={2} />
                 </div>
               </div>
-              
+
               <div className="feature-content">
                 <h3 className="feature-title">{feature.title}</h3>
                 <p className="feature-description">{feature.description}</p>

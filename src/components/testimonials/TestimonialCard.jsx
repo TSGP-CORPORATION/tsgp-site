@@ -1,21 +1,24 @@
 import React from 'react'
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './TestimonialCard.css'
 
 const TestimonialCard = ({ testimonial, onPrev, onNext }) => {
+  const { t } = useLanguage()
+
   return (
     <div className="testimonial-card">
       <div className="testimonial-quote-icon">
         <Quote size={40} />
       </div>
-      
+
       <p className="testimonial-text">
         {testimonial.text}
       </p>
-      
+
       <div className="testimonial-author">
-        <img 
-          src={testimonial.authorImage} 
+        <img
+          src={testimonial.authorImage}
           alt={testimonial.authorName}
           className="testimonial-author-image"
         />
@@ -24,19 +27,19 @@ const TestimonialCard = ({ testimonial, onPrev, onNext }) => {
           <p className="testimonial-author-role">{testimonial.authorRole}</p>
         </div>
       </div>
-      
+
       <div className="testimonial-navigation">
-        <button 
-          className="testimonial-nav-button" 
+        <button
+          className="testimonial-nav-button"
           onClick={onPrev}
-          aria-label="Previous testimonial"
+          aria-label={t.testimonials.previous}
         >
           <ChevronLeft size={20} />
         </button>
-        <button 
-          className="testimonial-nav-button" 
+        <button
+          className="testimonial-nav-button"
           onClick={onNext}
-          aria-label="Next testimonial"
+          aria-label={t.testimonials.next}
         >
           <ChevronRight size={20} />
         </button>
