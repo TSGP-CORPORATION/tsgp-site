@@ -52,7 +52,7 @@
 .nav-bar-right {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 /* Menu Links */
@@ -81,6 +81,34 @@
   color: #888;
   margin: 0 0.25rem;
   font-weight: 300;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.language-button {
+  min-width: 44px;
+  min-height: 34px;
+  padding: 0.35rem 0.6rem;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  transition: all 0.3s ease;
+}
+
+.language-button:hover,
+.language-button.active {
+  background: #F5A623;
+  color: #1a1a1a;
 }
 
 /* Get Quote Button */
@@ -186,6 +214,11 @@
     padding: 0.55rem 1.1rem;
     font-size: 0.8rem;
   }
+
+  .language-button {
+    min-width: 40px;
+    padding: 0.3rem 0.5rem;
+  }
 }
 
 /* Tablet (900px and below) */
@@ -210,6 +243,10 @@
   .get-quote-btn {
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
+  }
+
+  .language-switcher {
+    flex-shrink: 0;
   }
 }
 
@@ -269,6 +306,15 @@
     margin-top: 2rem;
     padding: 0.75rem 1.25rem;
     font-size: 0.9rem;
+  }
+
+  .language-switcher {
+    width: 100%;
+    margin-top: 1.25rem;
+  }
+
+  .language-button {
+    flex: 1;
   }
   
   .logo-container svg {

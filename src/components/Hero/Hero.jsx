@@ -1,8 +1,11 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './Hero.css'
 
 const Hero = () => {
+  const { t } = useLanguage()
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -42,55 +45,55 @@ const Hero = () => {
   return (
     <section className="hero" id="home">
       <div className="hero-overlay"></div>
-      <motion.div 
+      <Motion.div
         className="hero-content"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.h1 
+        <Motion.h1
           className="hero-title"
           variants={itemVariants}
         >
-          TECH FOR SOLUTIONS
-          <span className="hero-subtitle-inline">General Solution Corporation</span>
-        </motion.h1>
-        
-        <motion.p 
+          {t.hero.title}
+          <span className="hero-subtitle-inline">{t.hero.subtitle}</span>
+        </Motion.h1>
+
+        <Motion.p
           className="hero-description"
           variants={itemVariants}
         >
-          Trouver et déployer des solutions logicielles sécurisées afin de faciliter le travail et d’améliorer la performance des services des entreprises, pour un Cameroun meilleur.
-        </motion.p>
-        
-        <motion.div 
+          {t.hero.description}
+        </Motion.p>
+
+        <Motion.div
           className="hero-cta-group"
           variants={itemVariants}
         >
-          <motion.a 
-            href="#contact" 
+          <Motion.a
+            href="#contact"
             className="hero-btn hero-btn-primary"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
           >
-            <span>Get Started</span>
+            <span>{t.hero.primaryCta}</span>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M7.5 4.16669L13.3333 10L7.5 15.8334" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </motion.a>
-          
-          <motion.a 
-            href="#services" 
+          </Motion.a>
+
+          <Motion.a
+            href="#services"
             className="hero-btn hero-btn-secondary"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
           >
-            Our Services
-          </motion.a>
-        </motion.div>
-      </motion.div>
+            {t.hero.secondaryCta}
+          </Motion.a>
+        </Motion.div>
+      </Motion.div>
     </section>
   )
 }
