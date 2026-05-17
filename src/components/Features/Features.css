@@ -1,7 +1,11 @@
 /* Features Section */
+.features-wrapper {
+  background-color: var(--color-light-grey);
+  width: 100%;
+}
+
 .features {
   padding: var(--space-3xl) var(--space-xl);
-  background-color: var(--color-light-grey);
   max-width: 1400px;
   margin: 0 auto;
 }

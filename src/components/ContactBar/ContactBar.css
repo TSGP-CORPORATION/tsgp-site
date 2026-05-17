@@ -161,13 +161,13 @@
 /* Small Mobile (480px and below) - Hide contact bar on mobile */
 @media (max-width: 480px) {
   .contact-bar {
-    display: none;
+    display: none !important;
   }
 }
 
 /* Extra Small Mobile (375px and below) */
 @media (max-width: 375px) {
   .contact-bar {
-    display: none;
+    display: none !important;
   }
 }

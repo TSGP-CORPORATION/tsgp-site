@@ -53,7 +53,6 @@
 
 .menu-item:hover {
   border-color: var(--color-accent);
-  transform: translateX(10px);
 }
 
 .menu-item:hover .menu-icon {
@@ -74,6 +73,12 @@
 
 .menu-item.active .menu-label {
   color: var(--color-white);
+}
+
+@media (min-width: 769px) {
+  .menu-item:hover {
+    transform: translateX(10px);
+  }
 }
 
 /* Responsive */

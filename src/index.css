@@ -106,7 +106,7 @@ a, button {
 }
 
 /* Ensure buttons have minimum touch target size (44x44px) */
-button, a[role="button"], .btn-like {
+.btn-like {
   min-height: 44px;
   min-width: 44px;
   padding: 0.75rem 1.5rem;
@@ -120,7 +120,7 @@ input, textarea, select {
 
 /* Ensure clickable elements are properly spaced on mobile */
 @media (max-width: 768px) {
-  button, a[role="button"], .btn-like {
+  .btn-like {
     min-height: 48px;
     min-width: 48px;
     padding: 0.875rem 1.75rem;
