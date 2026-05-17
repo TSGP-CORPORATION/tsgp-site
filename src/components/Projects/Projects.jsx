@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './Projects.css'
 
 const Projects = () => {
   const [visibleCards, setVisibleCards] = useState([])
   const cardsRef = useRef([])
+  const { t } = useLanguage()
 
   const projects = [
     {
-      title: 'New World Technology',
-      category: 'WEB DEVELOPMENT',
-      description: 'A full-featured school website for a vocational training institution specializing in tech, electrical & solar training. Built for performance, clarity, and a seamless student experience.',
+      ...t.projects.items[0],
       image: '/Pasted image.png',
       size: 'large',
-      link: 'https://newworldtechnology.org/'
-    }
+      link: 'https://newworldtechnology.org/',
+    },
   ]
 
   useEffect(() => {
@@ -43,25 +43,23 @@ const Projects = () => {
         <div className="projects-hero">
           <div className="projects-breadcrumb">
             <ChevronLeft size={20} />
-            <span>OUR WORK</span>
+            <span>{t.projects.label}</span>
             <ChevronRight size={20} />
           </div>
-          <h1 className="projects-hero-title">Discover Our Projects</h1>
-          <p className="projects-hero-subtitle">
-            From concept to deployment, we build digital products that make an impact. Here's a look at what we've shipped so far.
-          </p>
+          <h1 className="projects-hero-title">{t.projects.title}</h1>
+          <p className="projects-hero-subtitle">{t.projects.subtitle}</p>
         </div>
 
         <div className="projects-masonry">
           {projects.map((project, index) => (
             <div
-              key={index}
+              key={project.title}
               ref={el => cardsRef.current[index] = el}
               className={`project-card ${project.size} ${visibleCards.includes(index) ? 'visible' : ''}`}
             >
               <div className="project-card-inner">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="project-card-image"
                   loading="lazy"

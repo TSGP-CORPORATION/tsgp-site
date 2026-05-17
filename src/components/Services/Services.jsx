@@ -1,30 +1,17 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { ShieldCheck, Cpu, BarChart3, Wrench } from 'lucide-react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './Services.css'
 
 const Services = () => {
+  const { t } = useLanguage()
+
   const services = [
-    {
-      icon: ShieldCheck,
-      title: 'Secure Software Solutions',
-      description: 'We develop and deploy robust, secure software tailored to protect your business data and streamline your operations for maximum efficiency.'
-    },
-    {
-      icon: Cpu,
-      title: 'Digital Transformation',
-      description: 'End-to-end support for SMEs stepping into the digital era — from process automation to full modernisation of existing systems.'
-    },
-    {
-      icon: BarChart3,
-      title: 'Performance & Analytics',
-      description: 'Smart dashboards and analytical tools to measure, track and continuously improve the performance of your services and production in real time.'
-    },
-    {
-      icon: Wrench,
-      title: 'Support & Maintenance',
-      description: 'Ongoing technical assistance, regular updates and responsive support to guarantee the availability and reliability of your solutions.'
-    }
+    { icon: ShieldCheck, ...t.services.cards[0] },
+    { icon: Cpu, ...t.services.cards[1] },
+    { icon: BarChart3, ...t.services.cards[2] },
+    { icon: Wrench, ...t.services.cards[3] },
   ]
 
   const containerVariants = {
@@ -52,33 +39,26 @@ const Services = () => {
   return (
     <section className="services" id="services">
       <div className="services-header">
-        <span className="services-label">Our Services</span>
-        <h2 className="services-title">
-          Comprehensive Tech Solutions
-        </h2>
-        <p className="services-subtitle">
-          We find and deploy secure software solutions to streamline work and improve the performance of businesses — for a better Cameroon.
-        </p>
+        <span className="services-label">{t.services.label}</span>
+        <h2 className="services-title">{t.services.title}</h2>
+        <p className="services-subtitle">{t.services.subtitle}</p>
       </div>
 
-      <motion.div 
+      <Motion.div
         className="services-grid"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
-        {services.map((service, index) => {
+        {services.map((service) => {
           const Icon = service.icon
           return (
-            <motion.div 
-              key={index}
+            <Motion.div
+              key={service.title}
               className="service-card"
-              /*Variants allow you to define animation states and organise them by name. 
-              They allow you to control animations 
-              throughout a component tree by switching a single animate prop */
               variants={cardVariants}
-              whileHover={{ 
+              whileHover={{
                 y: -10,
                 boxShadow: '0 20px 30px rgba(0, 0, 0, 0.15)',
                 transition: { duration: 0.3 }
@@ -89,10 +69,10 @@ const Services = () => {
               </div>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
-            </motion.div>
+            </Motion.div>
           )
         })}
-      </motion.div>
+      </Motion.div>
     </section>
   )
 }
