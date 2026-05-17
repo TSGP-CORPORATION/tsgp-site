@@ -8,10 +8,10 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      text: "Working with this team was a great experience from start to finish. They delivered our school website on time, exactly as promised, and the quality of the work truly exceeded what we had in mind. They understood our vision and translated it into a clean, professional platform that represents our institution perfectly.",
-      authorName: "Founder",
-      authorRole: "Founder, New World Technology Vocational Training",
-      authorImage: "https://lh3.googleusercontent.com/p/AF1QipOrwFtY46OyIMbwHvXqSDW4pFXhVlNYnYtp5J2A=s680-w680-h510-rw"
+      text: "One real business owner saying they found more margin after 30 days is stronger than any advertising campaign. That is why TSGP is building StockYamo around pilots, proof, and measurable operational results.",
+      authorName: "TSGP Strategy Note",
+      authorRole: "StockYamo validation principle",
+      authorImage: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=200&auto=format&fit=crop&q=80"
     }
   ]
 
@@ -28,29 +28,28 @@ const Testimonials = () => {
       <div className="testimonials-container">
         <div className="testimonials-content">
           <div className="testimonials-left">
-            <span className="testimonials-label">• TESTIMONIALS •</span>
+            <span className="testimonials-label">• PROOF STRATEGY •</span>
             <h2 className="testimonials-title">
-              Built On Trust, Proven<br />
-              By Results
+              Case Studies Before<br />
+              Public Noise
             </h2>
             <p className="testimonials-description">
-              Don't just take our word for it. Hear from our satisfied clients who have 
-              experienced the quality and professionalism that defines our work.
+              TSGP will document pilot clients carefully: business size, initial pain, usage behaviour, and measurable change after 30 days. Proof comes before scale.
             </p>
-            <button className="testimonials-cta-button">
-              <span>WORK WITH US</span>
+            <a href="#contact" className="testimonials-cta-button">
+              <span>Become a pilot</span>
               <ArrowRight size={20} />
-            </button>
+            </a>
           </div>
 
           <div className="testimonials-right">
             <div className="testimonials-image-wrapper">
-              <img 
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgUKvTXYnPfUo3RIYujNfQcEiIgP_EiJ0z9A&s" 
-                alt="Construction professionals"
+              <img
+                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&auto=format&fit=crop&q=80"
+                alt="Business owner reviewing operational results"
                 className="testimonials-image"
               />
-              <TestimonialCard 
+              <TestimonialCard
                 testimonial={testimonials[currentIndex]}
                 onPrev={handlePrev}
                 onNext={handleNext}

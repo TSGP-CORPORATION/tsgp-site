@@ -1,6 +1,6 @@
-import React from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import './contact.css';
+import React from 'react'
+import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import './contact.css'
 
 const Contact = () => {
   return (
@@ -8,45 +8,43 @@ const Contact = () => {
       <div className="contact-container">
         <div className="contact-header">
           <h2 className="contact-title">
-            Contactez-Nous
+            Request a StockYamo demo
           </h2>
           <p className="contact-subtitle">
-            Rejoignez notre communauté  ou obtenez plus d'informations sur nos services. 
-            Nous sommes là pour vous accompagner dans le development de vos project.
+            Tell us about your business, your stock workflow, and the problem you want to solve. TSGP will help you assess whether StockYamo Core is the right fit.
           </p>
         </div>
 
         <div className="contact-grid">
-          {/* Contact Form */}
           <div className="contact-form-wrapper">
             <h3 className="contact-form-title">
-              Demande d'Adhésion
+              Business inquiry
             </h3>
-            
+
             <form className="contact-form">
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="firstName" className="form-label">
-                    Prénom
+                    First name
                   </label>
                   <input
                     type="text"
                     id="firstName"
                     name="firstName"
                     className="form-input"
-                    placeholder="Votre prénom"
+                    placeholder="Your first name"
                   />
                 </div>
                 <div className="form-group">
                   <label htmlFor="lastName" className="form-label">
-                    Nom
+                    Last name
                   </label>
                   <input
                     type="text"
                     id="lastName"
                     name="lastName"
                     className="form-input"
-                    placeholder="Votre nom"
+                    placeholder="Your last name"
                   />
                 </div>
               </div>
@@ -60,13 +58,13 @@ const Contact = () => {
                   id="email"
                   name="email"
                   className="form-input"
-                  placeholder="votre@email.com"
+                  placeholder="you@company.com"
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="phone" className="form-label">
-                  Téléphone
+                  WhatsApp or phone
                 </label>
                 <input
                   type="tel"
@@ -79,32 +77,32 @@ const Contact = () => {
 
               <div className="form-group">
                 <label htmlFor="interest" className="form-label">
-                  Domaine d'Intérêt
+                  Business type
                 </label>
                 <select
                   id="interest"
                   name="interest"
                   className="form-select"
                 >
-                  <option value="">Sélectionnez un domaine</option>
-                  <option value="poultry">Élevage Avicole/Aquaculture</option>
-                  <option value="aquaculture">Stock</option>
-                  <option value="pig">Education</option>
-                  <option value="agriculture"> Construction</option>
-                  <option value="all">Tous les domaines</option>
+                  <option value="">Select your business type</option>
+                  <option value="pharmacy">Pharmacy</option>
+                  <option value="shop">Retail shop or mini-market</option>
+                  <option value="wholesale">Wholesaler or distributor</option>
+                  <option value="multi-location">Multi-location business</option>
+                  <option value="other">Other organisation</option>
                 </select>
               </div>
 
               <div className="form-group">
                 <label htmlFor="message" className="form-label">
-                  Message
+                  Current stock challenge
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
                   className="form-textarea"
-                  placeholder="Parlez-nous de votre projet ..."
+                  placeholder="Tell us what you currently use for stock and what hurts most..."
                 ></textarea>
               </div>
 
@@ -112,28 +110,27 @@ const Contact = () => {
                 type="submit"
                 className="form-submit"
               >
-                Envoyer la Demande
+                Send demo request
               </button>
             </form>
           </div>
 
-          {/* Contact Information */}
           <div className="contact-info-wrapper">
             <div className="contact-info-card">
               <h3 className="contact-info-title">
-                Informations de Contact
+                Contact information
               </h3>
-              
+
               <div className="contact-info-list">
                 <div className="contact-info-item">
                   <div className="contact-icon primary">
                     <MapPin size={24} />
                   </div>
                   <div className="contact-info-content">
-                    <h4>Adresse</h4>
+                    <h4>Market focus</h4>
                     <p>
-                      Yaounde, Région du Centre<br />
-                      Cameroun
+                      Yaounde, Centre Region<br />
+                      Cameroon
                     </p>
                   </div>
                 </div>
@@ -143,7 +140,7 @@ const Contact = () => {
                     <Phone size={24} />
                   </div>
                   <div className="contact-info-content">
-                    <h4>Téléphone</h4>
+                    <h4>Phone</h4>
                     <p>
                       +237 699 585 467<br />
                       +237 671 557 155
@@ -158,8 +155,8 @@ const Contact = () => {
                   <div className="contact-info-content">
                     <h4>Email</h4>
                     <p>
-                      info@tsgp-corporation@gmail.cm<br />
-                      contact@tsgp-corporation@gmail.cm
+                      info@tsgpcorporation.com<br />
+                      tsgp-corporation@gmail.com
                     </p>
                   </div>
                 </div>
@@ -169,10 +166,10 @@ const Contact = () => {
                     <Clock size={24} />
                   </div>
                   <div className="contact-info-content">
-                    <h4>Heures d'Ouverture</h4>
+                    <h4>Demo rhythm</h4>
                     <p>
-                      Lun - Ven: 8h00 - 17h00<br />
-                      Sam: 8h00 - 13h00
+                      Field demos by appointment<br />
+                      WhatsApp follow-up available
                     </p>
                   </div>
                 </div>
@@ -181,21 +178,20 @@ const Contact = () => {
 
             <div className="contact-cta-card">
               <h3 className="contact-cta-title">
-                Prêt à nous rejoindre ?
+                Pilot businesses wanted
               </h3>
               <p className="contact-cta-text">
-                Devenez membre de notre communauté  et bénéficiez de notre expertise, 
-                de nos ressources partagées et de notre réseau de soutien.
+                We are prioritising a small number of Yaounde businesses willing to test StockYamo Core, give feedback, and document measurable improvement after 30 days.
               </p>
               <button className="contact-cta-button">
-                En Savoir Plus
+                Join the pilot list
               </button>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

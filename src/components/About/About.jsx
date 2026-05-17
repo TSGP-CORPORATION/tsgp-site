@@ -2,6 +2,38 @@ import React, { useState, useEffect, useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
 import './About.css'
 
+const Counter = ({ end, suffix = '', duration = 2000, delay = 0, isVisible }) => {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    const startTime = Date.now() + delay
+    const animate = () => {
+      const now = Date.now()
+      const elapsed = now - startTime
+
+      if (elapsed < 0) {
+        requestAnimationFrame(animate)
+        return
+      }
+
+      const progress = Math.min(elapsed / duration, 1)
+      const easeOut = 1 - Math.pow(1 - progress, 3)
+
+      setCount(Math.floor(easeOut * end))
+
+      if (progress < 1) {
+        requestAnimationFrame(animate)
+      }
+    }
+
+    requestAnimationFrame(animate)
+  }, [isVisible, end, duration, delay])
+
+  return <span>{count}{suffix}</span>
+}
+
 const About = () => {
   const [countersVisible, setCountersVisible] = useState(false)
   const statsRef = useRef(null)
@@ -23,68 +55,41 @@ const About = () => {
     return () => observer.disconnect()
   }, [])
 
-  const Counter = ({ end, suffix = '', duration = 2000, delay = 0 }) => {
-    const [count, setCount] = useState(0)
-
-    useEffect(() => {
-      if (!countersVisible) return
-
-      const startTime = Date.now() + delay
-      const animate = () => {
-        const now = Date.now()
-        const elapsed = now - startTime
-        
-        if (elapsed < 0) {
-          requestAnimationFrame(animate)
-          return
-        }
-
-        const progress = Math.min(elapsed / duration, 1)
-        const easeOut = 1 - Math.pow(1 - progress, 3)
-        
-        setCount(Math.floor(easeOut * end))
-
-        if (progress < 1) {
-          requestAnimationFrame(animate)
-        }
-      }
-
-      requestAnimationFrame(animate)
-    }, [countersVisible, end, duration, delay])
-
-    return <span>{count}{suffix}</span>
-  }
+  const stats = [
+    { end: 1, suffix: '', label: 'Focused flagship product', delay: 0 },
+    { end: 3, suffix: '', label: 'Pilot-client target', delay: 100 },
+    { end: 20, suffix: '', label: 'Yaounde validation visits', delay: 200 },
+    { end: 90, suffix: '', label: 'Day execution cycle', delay: 300 },
+  ]
 
   return (
     <section className="about-hero" id="about">
       <div className="about-hero-container">
         <div className="about-hero-content">
           <div className="about-hero-left">
-            <span className="about-label">« ABOUT US »</span>
+            <span className="about-label">« Who We Are »</span>
             <h1 className="about-hero-title">
-              Focused On Excellence In Every Project
+              A security-first B2B software company built for local business reality
             </h1>
             <p className="about-hero-text">
-              We are a passionate tech company dedicated to building modern digital solutions. 
-              From concept to deployment, we craft products that are fast, beautiful, and built to scale — 
-              driven by a relentless pursuit of quality and innovation.
+              TSGP Corporation builds intelligent, scalable software that helps organisations operate more efficiently, securely, and strategically. We build, secure, market, and document our own products in-house so clients get systems shaped by real field needs, not generic templates.
             </p>
             <div className="about-signature">
-              <p className="signature-name">Tinfeh & Wilfried</p>
-              <p className="signature-title">Founders</p>
+              <p className="signature-name">Security. Reliability. Local relevance.</p>
+              <p className="signature-title">Our operating standard</p>
             </div>
-            <button className="about-cta-button">
-              <span>CONTACT US</span>
+            <a href="#contact" className="about-cta-button">
+              <span>Talk to TSGP</span>
               <ArrowRight size={20} />
-            </button>
+            </a>
           </div>
 
           <div className="about-hero-right">
             <div className="about-image-frame"></div>
             <div className="about-image-wrapper">
-              <img 
-                src="/WhatsApp Image 2026-03-01 at 23.02.29.jpeg" 
-                alt="Tech team collaborating" 
+              <img
+                src="/WhatsApp Image 2026-03-01 at 23.02.29.jpeg"
+                alt="TSGP team building secure business software"
               />
             </div>
           </div>
@@ -93,39 +98,27 @@ const About = () => {
 
       <div className="about-stats-bar" ref={statsRef}>
         <div className="about-stats-container">
-          <div className="about-stat-item">
-            <div className="about-stat-number">
-              <Counter end={100} suffix="%" delay={0} />
+          {stats.map((stat) => (
+            <div className="about-stat-item" key={stat.label}>
+              <div className="about-stat-number">
+                <Counter
+                  end={stat.end}
+                  suffix={stat.suffix}
+                  delay={stat.delay}
+                  isVisible={countersVisible}
+                />
+              </div>
+              <div className="about-stat-label">{stat.label}</div>
             </div>
-            <div className="about-stat-label">Client Satisfaction</div>
-          </div>
-          <div className="about-stat-item">
-            <div className="about-stat-number">
-              <Counter end={1} suffix="+" delay={100} />
-            </div>
-            <div className="about-stat-label">Successful Projects</div>
-          </div>
-          <div className="about-stat-item">
-            <div className="about-stat-number">
-              <Counter end={2} suffix="" delay={200} />
-            </div>
-            <div className="about-stat-label">Expert Developers</div>
-          </div>
-          <div className="about-stat-item">
-            <div className="about-stat-number">
-              <Counter end={1} suffix="+" delay={300} />
-            </div>
-            <div className="about-stat-label">Years of Experience</div>
-          </div>
+          ))}
         </div>
       </div>
 
-      {/* Team Section */}
       <div className="about-team">
         <div className="about-team-container">
-          <span className="about-label">« THE TEAM »</span>
-          <h2 className="about-team-title">The Minds Behind The Work</h2>
-          <p className="about-team-subtitle">Two builders, one vision — crafting digital experiences that matter.</p>
+          <span className="about-label">« Leadership »</span>
+          <h2 className="about-team-title">Builders behind the product</h2>
+          <p className="about-team-subtitle">Engineering, cybersecurity, field sales, marketing, and documentation working from one product vision.</p>
           <div className="about-team-grid">
             <div className="about-team-card">
               <div className="about-team-card-image-wrapper">

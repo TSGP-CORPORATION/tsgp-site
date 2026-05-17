@@ -7,24 +7,24 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "How long does the development of a  project usually take?",
-      answer: "The timeline for a the development of a  project varies depending on its size and complexity. A typical residential project can take anywhere from 1 to 3 months, while larger commercial projects may take 6 months or more. We provide detailed timelines during the planning phase and keep you updated throughout the entire process."
+      question: 'What is StockYamo?',
+      answer: 'StockYamo is an inventory and sales control product for local shops, pharmacies, mini-markets, and distributors that need clearer information about stock, sales, losses, and margins.'
     },
     {
-      question: "Do I need permits for my project?",
-      answer: "Most  projects require permits from local authorities to ensure compliance with building codes and safety regulations. Our team handles all permit applications and documentation on your behalf, making the process seamless and stress-free. We'll guide you through every requirement specific to your project and location."
+      question: 'Who is StockYamo built for first?',
+      answer: 'The first target users are businesses in Yaounde that manage physical products: pharmacies, retail shops, wholesalers, and businesses with more than one location or too much stock activity for paper records.'
     },
     {
-      question: "What Language do you use?",
-      answer: "We use only high-quality language from trusted suppliers. Our selection process prioritizes durability, sustainability, and cost-effectiveness. We're happy to discuss laguage  options with you and can accommodate specific preferences or requirements you may have for your project."
+      question: 'Why is TSGP focusing on one product?',
+      answer: 'TSGP can build across many software categories, but market traction needs focus. StockYamo Core is the first product to validate deeply, generate recurring revenue, and produce real case studies before the company expands.'
     },
     {
-      question: "Can I make changes after Development starts?",
-      answer: "While we encourage finalizing all decisions before Development begins, we understand that changes may be necessary. Minor modifications can often be accommodated, though they may affect the timeline and budget. We'll work with you to assess the feasibility and impact of any requested changes and provide transparent communication throughout."
+      question: 'Do you offer pilot access?',
+      answer: 'Yes. The current go-to-market plan is to work with a small number of pilot businesses, observe real usage, document results, and improve the product before wider public launch.'
     },
     {
-      question: "How much will my construction project cost?",
-      answer: "Project costs vary widely based on size, materials, complexity, and location. We provide detailed, itemized quotes after an initial consultation and site assessment. Our transparent pricing includes all labor, materials, and permits. We also offer flexible payment plans and will work within your budget to deliver the best possible results."
+      question: 'How does TSGP support clients after setup?',
+      answer: 'TSGP is moving toward recurring support through onboarding, maintenance, updates, cybersecurity monitoring, and clear support tiers instead of one-time software delivery.'
     }
   ]
 
@@ -36,17 +36,16 @@ const FAQ = () => {
     <section className="faq-section" id="faq">
       <div className="faq-container">
         <div className="faq-hero">
-          <h1 className="faq-hero-title">Got Questions? We've Got You Covered</h1>
+          <h1 className="faq-hero-title">Questions buyers ask before a demo</h1>
           <p className="faq-hero-subtitle">
-            From project planning to final touches, we've answered the most common questions 
-            to help you make informed decisions.
+            StockYamo is built to make inventory control practical for local businesses, not complicated for the people who use it daily.
           </p>
         </div>
 
         <div className="faq-list">
           {faqs.map((faq, index) => (
             <FAQItem
-              key={index}
+              key={faq.question}
               question={faq.question}
               answer={faq.answer}
               isOpen={openIndex === index}

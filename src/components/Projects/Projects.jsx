@@ -8,11 +8,19 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'StockYamo Core',
+      category: 'FLAGSHIP PRODUCT',
+      description: 'Inventory and sales control for shops, pharmacies, and distributors that need access to real operational information.',
+      image: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=900&auto=format&fit=crop&q=80',
+      size: 'large',
+      link: '#contact'
+    },
+    {
       title: 'New World Technology',
       category: 'WEB DEVELOPMENT',
-      description: 'A full-featured school website for a vocational training institution specializing in tech, electrical & solar training. Built for performance, clarity, and a seamless student experience.',
+      description: 'A professional school website for a vocational training institution, built for clarity, performance, and student trust.',
       image: '/Pasted image.png',
-      size: 'large',
+      size: 'medium',
       link: 'https://newworldtechnology.org/'
     }
   ]
@@ -37,31 +45,40 @@ const Projects = () => {
     return () => observers.forEach(observer => observer.disconnect())
   }, [])
 
+  const openProject = (link) => {
+    if (link.startsWith('#')) {
+      document.querySelector(link)?.scrollIntoView({ behavior: 'smooth' })
+      return
+    }
+
+    window.open(link, '_blank')
+  }
+
   return (
     <section className="projects" id="projects">
       <div className="projects-container">
         <div className="projects-hero">
           <div className="projects-breadcrumb">
             <ChevronLeft size={20} />
-            <span>OUR WORK</span>
+            <span>PRODUCT AND PROOF</span>
             <ChevronRight size={20} />
           </div>
-          <h1 className="projects-hero-title">Discover Our Projects</h1>
+          <h1 className="projects-hero-title">Focused before expanding</h1>
           <p className="projects-hero-subtitle">
-            From concept to deployment, we build digital products that make an impact. Here's a look at what we've shipped so far.
+            TSGP is a multi-vertical B2B software company, but the current market focus is one product done deeply: StockYamo Core.
           </p>
         </div>
 
         <div className="projects-masonry">
           {projects.map((project, index) => (
             <div
-              key={index}
+              key={project.title}
               ref={el => cardsRef.current[index] = el}
               className={`project-card ${project.size} ${visibleCards.includes(index) ? 'visible' : ''}`}
             >
               <div className="project-card-inner">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="project-card-image"
                   loading="lazy"
@@ -69,7 +86,7 @@ const Projects = () => {
                 <div className="project-card-overlay">
                   <span className="project-card-category">{project.category}</span>
                   <p className="project-card-description">{project.description}</p>
-                  <button className="project-card-button" onClick={() => window.open(project.link, '_blank')}>
+                  <button className="project-card-button" onClick={() => openProject(project.link)}>
                     <ArrowRight size={24} />
                   </button>
                 </div>

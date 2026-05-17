@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import './CTA.css'
 
 const CTA = () => {
@@ -29,9 +29,9 @@ const CTA = () => {
   }
 
   return (
-    <section className="cta" id="contact">
+    <section className="cta" id="contact-cta">
       <div className="cta-overlay"></div>
-      <motion.div 
+      <Motion.div
         className="cta-content"
         variants={containerVariants}
         initial="hidden"
@@ -39,25 +39,24 @@ const CTA = () => {
         viewport={{ once: true }}
       >
         <h2 className="cta-title">
-          Ready to Build Your Dream Project?
+          Run a shop, pharmacy, or distribution business in Yaounde?
         </h2>
         <p className="cta-description">
-          Let's transform your vision into reality. Our team of experts is ready to 
-          discuss your project requirements and provide a comprehensive solution.
+          Let us show you how StockYamo can replace scattered stock records with real-time control, clearer margins, and a support system built for your business.
         </p>
-        <motion.a 
-          href="#contact" 
+        <Motion.a
+          href="#contact"
           className="cta-button"
           variants={buttonVariants}
           whileHover="hover"
           whileTap="tap"
         >
-          <span>Get Your Free Quote</span>
+          <span>Request a live demo</span>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M7.5 4.16669L13.3333 10L7.5 15.8334" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-        </motion.a>
-        
+        </Motion.a>
+
         <div className="cta-contact-info">
           <div className="cta-contact-item">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -65,16 +64,16 @@ const CTA = () => {
             </svg>
             <span>+237 699 585 467</span>
           </div>
-          
+
           <div className="cta-contact-item">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2"/>
               <path d="M3 7L12 13L21 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <span>tsgp-corporation@gmail.com</span>
+            <span>info@tsgpcorporation.com</span>
           </div>
         </div>
-      </motion.div>
+      </Motion.div>
     </section>
   )
 }

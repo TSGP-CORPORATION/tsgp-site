@@ -20,7 +20,7 @@ const NavBar = () => {
   // Close mobile menu on window resize if it becomes desktop size
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768 && isMobileMenuOpen) {
+      if (window.innerWidth > 900 && isMobileMenuOpen) {
         closeMobileMenu()
       }
     }
@@ -69,19 +69,19 @@ const NavBar = () => {
             <span className="separator">/</span>
             <a href="#about" onClick={handleLinkClick}>ABOUT</a>
             <span className="separator">/</span>
-            <a href="#services" onClick={handleLinkClick}>SERVICES</a>
+            <a href="#services" onClick={handleLinkClick}>CAPABILITIES</a>
             <span className="separator">/</span>
-            <a href="#projects" onClick={handleLinkClick}>PROJECTS</a>
+            <a href="#construction-services" onClick={handleLinkClick}>STOCKYAMO</a>
             <span className="separator">/</span>
             <a href="#contact" onClick={handleLinkClick}>CONTACT</a>
           </div>
           
-          <button className="get-quote-btn" onClick={handleLinkClick}>
-            <span>GET A QUOTE</span>
+          <a href="#contact" className="get-quote-btn" onClick={handleLinkClick}>
+            <span>BOOK DEMO</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </button>
+          </a>
         </div>
       </div>
       
