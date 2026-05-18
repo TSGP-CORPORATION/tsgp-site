@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section footer-about">
           <div className="footer-logo">
-            <img src="/53c0d178-b698-4c51-bc93-229132f6fc51 - ModifiÃ©.png" alt="TSGP Corporation Logo" className="footer-logo-img" />
+            <img src="/logo.png" alt="TSGP Corporation Logo" className="footer-logo-img" />
           </div>
           <p className="footer-description">{t.footer.description}</p>
         </div>
