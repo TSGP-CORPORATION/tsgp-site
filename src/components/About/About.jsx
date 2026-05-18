@@ -3,6 +3,38 @@ import { ArrowRight } from 'lucide-react'
 import { useLanguage } from '../../i18n/LanguageContext'
 import './About.css'
 
+const Counter = ({ end, suffix = '', duration = 2000, delay = 0, isVisible }) => {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    const startTime = Date.now() + delay
+    const animate = () => {
+      const now = Date.now()
+      const elapsed = now - startTime
+
+      if (elapsed < 0) {
+        requestAnimationFrame(animate)
+        return
+      }
+
+      const progress = Math.min(elapsed / duration, 1)
+      const easeOut = 1 - Math.pow(1 - progress, 3)
+
+      setCount(Math.floor(easeOut * end))
+
+      if (progress < 1) {
+        requestAnimationFrame(animate)
+      }
+    }
+
+    requestAnimationFrame(animate)
+  }, [isVisible, end, duration, delay])
+
+  return <span>{count}{suffix}</span>
+}
+
 const About = () => {
   const [countersVisible, setCountersVisible] = useState(false)
   const statsRef = useRef(null)

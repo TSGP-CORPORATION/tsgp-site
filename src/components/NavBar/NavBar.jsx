@@ -30,7 +30,7 @@ const NavBar = () => {
   // Close mobile menu on window resize if it becomes desktop size
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768 && isMobileMenuOpen) {
+      if (window.innerWidth > 900 && isMobileMenuOpen) {
         closeMobileMenu()
       }
     }

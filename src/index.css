@@ -70,6 +70,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  min-width: 0;
 }
 
 body {
@@ -85,6 +86,12 @@ body {
 html, body, #root {
   width: 100%;
   min-height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span, button, label {
+  overflow-wrap: break-word;
 }
 
 /* Ensure smooth scrolling */
@@ -99,7 +106,7 @@ a, button {
 }
 
 /* Ensure buttons have minimum touch target size (44x44px) */
-button, a[role="button"], .btn-like {
+.btn-like {
   min-height: 44px;
   min-width: 44px;
   padding: 0.75rem 1.5rem;
@@ -113,7 +120,7 @@ input, textarea, select {
 
 /* Ensure clickable elements are properly spaced on mobile */
 @media (max-width: 768px) {
-  button, a[role="button"], .btn-like {
+  .btn-like {
     min-height: 48px;
     min-width: 48px;
     padding: 0.875rem 1.75rem;

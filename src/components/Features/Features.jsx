@@ -38,7 +38,8 @@ const Features = () => {
   }
 
   return (
-    <section className="features">
+    <section className="features-wrapper">
+      <div className="features">
       <div className="features-header">
         <span className="features-label">{t.features.label}</span>
         <h2 className="features-title">{t.features.title}</h2>
@@ -72,6 +73,7 @@ const Features = () => {
           )
         })}
       </div>
+    </div>
     </section>
   )
 }
