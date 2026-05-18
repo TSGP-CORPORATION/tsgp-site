@@ -42,10 +42,8 @@
   font-size: var(--text-xl);
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.95);
-  margin: 0 0 var(--space-2xl) 0;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto var(--space-2xl);
 }
 
 .cta-button {
@@ -95,6 +93,7 @@
   align-items: center;
   gap: var(--space-xs);
   color: rgba(255, 255, 255, 0.95);
+  min-width: 0;
 }
 
 .cta-contact-item svg {
@@ -166,5 +165,6 @@
   
   .cta-contact-item span {
     font-size: var(--text-sm);
+    overflow-wrap: anywhere;
   }
 }

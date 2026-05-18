@@ -1,108 +1,105 @@
 import React from 'react'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './contact.css'
 
 const Contact = () => {
+  const { t } = useLanguage()
+
   return (
     <section id="contact" className="contact">
       <div className="contact-container">
         <div className="contact-header">
-          <h2 className="contact-title">
-            Request a StockYamo demo
-          </h2>
-          <p className="contact-subtitle">
-            Tell us about your business, your stock workflow, and the problem you want to solve. TSGP will help you assess whether StockYamo Core is the right fit.
-          </p>
+          <h2 className="contact-title">{t.contact.title}</h2>
+          <p className="contact-subtitle">{t.contact.subtitle}</p>
         </div>
 
         <div className="contact-grid">
           <div className="contact-form-wrapper">
-            <h3 className="contact-form-title">
-              Business inquiry
-            </h3>
+            <h3 className="contact-form-title">{t.contact.formTitle}</h3>
 
             <form className="contact-form">
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="firstName" className="form-label">
-                    First name
+                    {t.contact.fields.firstName}
                   </label>
                   <input
                     type="text"
                     id="firstName"
                     name="firstName"
                     className="form-input"
-                    placeholder="Your first name"
+                    placeholder={t.contact.placeholders.firstName}
                   />
                 </div>
                 <div className="form-group">
                   <label htmlFor="lastName" className="form-label">
-                    Last name
+                    {t.contact.fields.lastName}
                   </label>
                   <input
                     type="text"
                     id="lastName"
                     name="lastName"
                     className="form-input"
-                    placeholder="Your last name"
+                    placeholder={t.contact.placeholders.lastName}
                   />
                 </div>
               </div>
 
               <div className="form-group">
                 <label htmlFor="email" className="form-label">
-                  Email
+                  {t.contact.fields.email}
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   className="form-input"
-                  placeholder="you@company.com"
+                  placeholder={t.contact.placeholders.email}
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="phone" className="form-label">
-                  WhatsApp or phone
+                  {t.contact.fields.phone}
                 </label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
                   className="form-input"
-                  placeholder="+237 XXX XXX XXX"
+                  placeholder={t.contact.placeholders.phone}
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="interest" className="form-label">
-                  Business type
+                  {t.contact.fields.interest}
                 </label>
                 <select
                   id="interest"
                   name="interest"
                   className="form-select"
                 >
-                  <option value="">Select your business type</option>
-                  <option value="pharmacy">Pharmacy</option>
-                  <option value="shop">Retail shop or mini-market</option>
-                  <option value="wholesale">Wholesaler or distributor</option>
-                  <option value="multi-location">Multi-location business</option>
-                  <option value="other">Other organisation</option>
+                  <option value="">{t.contact.placeholders.interest}</option>
+                  <option value="software">{t.contact.options.software}</option>
+                  <option value="stock">{t.contact.options.stock}</option>
+                  <option value="education">{t.contact.options.education}</option>
+                  <option value="construction">{t.contact.options.construction}</option>
+                  <option value="all">{t.contact.options.all}</option>
                 </select>
               </div>
 
               <div className="form-group">
                 <label htmlFor="message" className="form-label">
-                  Current stock challenge
+                  {t.contact.fields.message}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
                   className="form-textarea"
-                  placeholder="Tell us what you currently use for stock and what hurts most..."
+                  placeholder={t.contact.placeholders.message}
                 ></textarea>
               </div>
 
@@ -110,16 +107,14 @@ const Contact = () => {
                 type="submit"
                 className="form-submit"
               >
-                Send demo request
+                {t.contact.submit}
               </button>
             </form>
           </div>
 
           <div className="contact-info-wrapper">
             <div className="contact-info-card">
-              <h3 className="contact-info-title">
-                Contact information
-              </h3>
+              <h3 className="contact-info-title">{t.contact.infoTitle}</h3>
 
               <div className="contact-info-list">
                 <div className="contact-info-item">
@@ -127,10 +122,10 @@ const Contact = () => {
                     <MapPin size={24} />
                   </div>
                   <div className="contact-info-content">
-                    <h4>Market focus</h4>
+                    <h4>{t.contact.address}</h4>
                     <p>
-                      Yaounde, Centre Region<br />
-                      Cameroon
+                      {t.contact.addressLines[0]}<br />
+                      {t.contact.addressLines[1]}
                     </p>
                   </div>
                 </div>
@@ -140,7 +135,7 @@ const Contact = () => {
                     <Phone size={24} />
                   </div>
                   <div className="contact-info-content">
-                    <h4>Phone</h4>
+                    <h4>{t.contact.phoneLabel}</h4>
                     <p>
                       +237 699 585 467<br />
                       +237 671 557 155
@@ -153,10 +148,10 @@ const Contact = () => {
                     <Mail size={24} />
                   </div>
                   <div className="contact-info-content">
-                    <h4>Email</h4>
+                    <h4>{t.contact.emailLabel}</h4>
                     <p>
-                      info@tsgpcorporation.com<br />
-                      tsgp-corporation@gmail.com
+                      tsgp-corporation@gmail.com<br />
+                      contact@tsgp-corporation.com
                     </p>
                   </div>
                 </div>
@@ -166,10 +161,10 @@ const Contact = () => {
                     <Clock size={24} />
                   </div>
                   <div className="contact-info-content">
-                    <h4>Demo rhythm</h4>
+                    <h4>{t.contact.hours}</h4>
                     <p>
-                      Field demos by appointment<br />
-                      WhatsApp follow-up available
+                      {t.contact.hoursLines[0]}<br />
+                      {t.contact.hoursLines[1]}
                     </p>
                   </div>
                 </div>
@@ -177,14 +172,10 @@ const Contact = () => {
             </div>
 
             <div className="contact-cta-card">
-              <h3 className="contact-cta-title">
-                Pilot businesses wanted
-              </h3>
-              <p className="contact-cta-text">
-                We are prioritising a small number of Yaounde businesses willing to test StockYamo Core, give feedback, and document measurable improvement after 30 days.
-              </p>
+              <h3 className="contact-cta-title">{t.contact.ctaTitle}</h3>
+              <p className="contact-cta-text">{t.contact.ctaText}</p>
               <button className="contact-cta-button">
-                Join the pilot list
+                {t.contact.ctaButton}
               </button>
             </div>
           </div>

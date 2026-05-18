@@ -1,15 +1,18 @@
 import React from 'react'
-import { Boxes, MapPin, MessageCircle, ShieldCheck, Repeat, LineChart } from 'lucide-react'
+import { ShieldCheck, Cpu, BarChart3, Wrench, Layers, Briefcase } from 'lucide-react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './ServicesMenu.css'
 
 const ServicesMenu = ({ activeService, setActiveService }) => {
+  const { t } = useLanguage()
+
   const menuItems = [
-    { id: 'stockyamo', label: 'StockYamo Core', icon: Boxes },
-    { id: 'field', label: 'Field Sales', icon: MapPin },
-    { id: 'funnel', label: 'WhatsApp Funnel', icon: MessageCircle },
-    { id: 'security', label: 'Security First', icon: ShieldCheck },
-    { id: 'retention', label: 'Recurring Support', icon: Repeat },
-    { id: 'validation', label: 'Pilot Results', icon: LineChart }
+    { id: 'software', label: t.solutions.menu.software, icon: ShieldCheck },
+    { id: 'digital', label: t.solutions.menu.digital, icon: Cpu },
+    { id: 'analytics', label: t.solutions.menu.analytics, icon: BarChart3 },
+    { id: 'integration', label: t.solutions.menu.integration, icon: Layers },
+    { id: 'support', label: t.solutions.menu.support, icon: Wrench },
+    { id: 'consulting', label: t.solutions.menu.consulting, icon: Briefcase },
   ]
 
   return (

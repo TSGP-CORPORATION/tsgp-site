@@ -1,30 +1,17 @@
 import React from 'react'
 import { motion as Motion } from 'framer-motion'
-import { ShieldCheck, Database, BarChart3, Wrench } from 'lucide-react'
+import { ShieldCheck, Cpu, BarChart3, Wrench } from 'lucide-react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './Services.css'
 
 const Services = () => {
+  const { t } = useLanguage()
+
   const services = [
-    {
-      icon: ShieldCheck,
-      title: 'Security-first software',
-      description: 'We design business systems with cybersecurity, access control, and reliability built into the foundation instead of added as an afterthought.'
-    },
-    {
-      icon: Database,
-      title: 'StockYamo Core',
-      description: 'A focused inventory and POS product for local shops, pharmacies, and distributors that need accurate stock, sales, and operational visibility.'
-    },
-    {
-      icon: BarChart3,
-      title: 'Operational intelligence',
-      description: 'We turn daily business activity into useful information so owners can see losses, margins, movement, and performance without guesswork.'
-    },
-    {
-      icon: Wrench,
-      title: 'Maintenance and support',
-      description: 'We support clients with onboarding, updates, monitoring, training, and recurring service plans that keep systems stable after launch.'
-    }
+    { icon: ShieldCheck, ...t.services.cards[0] },
+    { icon: Cpu, ...t.services.cards[1] },
+    { icon: BarChart3, ...t.services.cards[2] },
+    { icon: Wrench, ...t.services.cards[3] },
   ]
 
   const containerVariants = {
@@ -52,13 +39,9 @@ const Services = () => {
   return (
     <section className="services" id="services">
       <div className="services-header">
-        <span className="services-label">What We Build</span>
-        <h2 className="services-title">
-          Enterprise discipline for local business systems
-        </h2>
-        <p className="services-subtitle">
-          TSGP combines engineering, cybersecurity, product strategy, and field insight to build software that solves real operational problems in Cameroon.
-        </p>
+        <span className="services-label">{t.services.label}</span>
+        <h2 className="services-title">{t.services.title}</h2>
+        <p className="services-subtitle">{t.services.subtitle}</p>
       </div>
 
       <Motion.div

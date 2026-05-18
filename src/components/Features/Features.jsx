@@ -1,28 +1,16 @@
 import React from 'react'
 import { motion as Motion } from 'framer-motion'
 import { ShieldCheck, Clock, Users } from 'lucide-react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './Features.css'
 
 const Features = () => {
+  const { t } = useLanguage()
+
   const features = [
-    {
-      icon: ShieldCheck,
-      title: 'Clients feel safe and in control',
-      description: 'We make security visible through clear onboarding, progress reporting, stable interfaces, and support expectations clients understand before work begins.',
-      side: 'left'
-    },
-    {
-      icon: Clock,
-      title: 'A disciplined 90-day launch rhythm',
-      description: 'Validate in the field, launch with pilots, then convert with case studies. No noise, no guessing, just a repeatable path from conversation to paying client.',
-      side: 'right'
-    },
-    {
-      icon: Users,
-      title: 'Built close to the market',
-      description: 'StockYamo is shaped by real shops, pharmacies, and distributors in Yaounde, using the language, objections, and workflows business owners already live with.',
-      side: 'left'
-    }
+    { icon: ShieldCheck, side: 'left', ...t.features.items[0] },
+    { icon: Clock, side: 'right', ...t.features.items[1] },
+    { icon: Users, side: 'left', ...t.features.items[2] },
   ]
 
   const leftVariants = {
@@ -50,12 +38,11 @@ const Features = () => {
   }
 
   return (
-    <section className="features">
+    <section className="features-wrapper">
+      <div className="features">
       <div className="features-header">
-        <span className="features-label">Why This Works</span>
-        <h2 className="features-title">
-          Systems sustained over time beat miracles.
-        </h2>
+        <span className="features-label">{t.features.label}</span>
+        <h2 className="features-title">{t.features.title}</h2>
       </div>
 
       <div className="features-list">
@@ -86,6 +73,7 @@ const Features = () => {
           )
         })}
       </div>
+    </div>
     </section>
   )
 }

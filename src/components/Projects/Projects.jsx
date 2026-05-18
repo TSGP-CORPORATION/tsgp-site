@@ -1,28 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './Projects.css'
 
 const Projects = () => {
   const [visibleCards, setVisibleCards] = useState([])
   const cardsRef = useRef([])
+  const { t } = useLanguage()
 
   const projects = [
     {
-      title: 'StockYamo Core',
-      category: 'FLAGSHIP PRODUCT',
-      description: 'Inventory and sales control for shops, pharmacies, and distributors that need access to real operational information.',
-      image: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=900&auto=format&fit=crop&q=80',
-      size: 'large',
-      link: '#contact'
-    },
-    {
-      title: 'New World Technology',
-      category: 'WEB DEVELOPMENT',
-      description: 'A professional school website for a vocational training institution, built for clarity, performance, and student trust.',
+      ...t.projects.items[0],
       image: '/Pasted image.png',
-      size: 'medium',
-      link: 'https://newworldtechnology.org/'
-    }
+      size: 'large',
+      link: 'https://newworldtechnology.org/',
+    },
   ]
 
   useEffect(() => {
@@ -60,13 +52,11 @@ const Projects = () => {
         <div className="projects-hero">
           <div className="projects-breadcrumb">
             <ChevronLeft size={20} />
-            <span>PRODUCT AND PROOF</span>
+            <span>{t.projects.label}</span>
             <ChevronRight size={20} />
           </div>
-          <h1 className="projects-hero-title">Focused before expanding</h1>
-          <p className="projects-hero-subtitle">
-            TSGP is a multi-vertical B2B software company, but the current market focus is one product done deeply: StockYamo Core.
-          </p>
+          <h1 className="projects-hero-title">{t.projects.title}</h1>
+          <p className="projects-hero-subtitle">{t.projects.subtitle}</p>
         </div>
 
         <div className="projects-masonry">

@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './NavBar.css'
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { language, setLanguage, languages, t } = useLanguage()
+
+  const navLinks = [
+    { href: '#home', label: t.nav.links.home },
+    { href: '#about', label: t.nav.links.about },
+    { href: '#services', label: t.nav.links.services },
+    { href: '#projects', label: t.nav.links.projects },
+    { href: '#contact', label: t.nav.links.contact },
+  ]
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -56,7 +66,7 @@ const NavBar = () => {
         <button 
           className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
+          aria-label={t.nav.menuLabel}
         >
           <span></span>
           <span></span>
@@ -65,19 +75,30 @@ const NavBar = () => {
         
         <div className={`nav-bar-right ${isMobileMenuOpen ? 'active' : ''}`}>
           <div className="menus">
-            <a href="#home" onClick={handleLinkClick}>HOME</a>
-            <span className="separator">/</span>
-            <a href="#about" onClick={handleLinkClick}>ABOUT</a>
-            <span className="separator">/</span>
-            <a href="#services" onClick={handleLinkClick}>CAPABILITIES</a>
-            <span className="separator">/</span>
-            <a href="#construction-services" onClick={handleLinkClick}>STOCKYAMO</a>
-            <span className="separator">/</span>
-            <a href="#contact" onClick={handleLinkClick}>CONTACT</a>
+            {navLinks.map((link, index) => (
+              <React.Fragment key={link.href}>
+                <a href={link.href} onClick={handleLinkClick}>{link.label}</a>
+                {index < navLinks.length - 1 && <span className="separator">/</span>}
+              </React.Fragment>
+            ))}
+          </div>
+
+          <div className="language-switcher" aria-label={t.nav.languageLabel}>
+            {Object.keys(languages).map((lang) => (
+              <button
+                key={lang}
+                className={`language-button ${language === lang ? 'active' : ''}`}
+                type="button"
+                onClick={() => setLanguage(lang)}
+                aria-pressed={language === lang}
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
           </div>
           
-          <a href="#contact" className="get-quote-btn" onClick={handleLinkClick}>
-            <span>BOOK DEMO</span>
+          <button className="get-quote-btn" onClick={handleLinkClick}>
+            <span>{t.nav.quote}</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

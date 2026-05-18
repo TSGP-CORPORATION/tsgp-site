@@ -1,8 +1,11 @@
 import React from 'react'
 import { motion as Motion } from 'framer-motion'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './CTA.css'
 
 const CTA = () => {
+  const { t } = useLanguage()
+
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -38,12 +41,8 @@ const CTA = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <h2 className="cta-title">
-          Run a shop, pharmacy, or distribution business in Yaounde?
-        </h2>
-        <p className="cta-description">
-          Let us show you how StockYamo can replace scattered stock records with real-time control, clearer margins, and a support system built for your business.
-        </p>
+        <h2 className="cta-title">{t.cta.title}</h2>
+        <p className="cta-description">{t.cta.description}</p>
         <Motion.a
           href="#contact"
           className="cta-button"
@@ -51,7 +50,7 @@ const CTA = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <span>Request a live demo</span>
+          <span>{t.cta.button}</span>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path d="M7.5 4.16669L13.3333 10L7.5 15.8334" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>

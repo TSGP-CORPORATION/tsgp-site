@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 import ServicesMenu from './ServicesMenu'
 import ServiceDetails from './ServiceDetails'
+import { useLanguage } from '../../i18n/LanguageContext'
 import './ConstructionServices.css'
 
 const ConstructionServices = () => {
-  const [activeService, setActiveService] = useState('stockyamo')
+  const [activeService, setActiveService] = useState('software')
+  const { t } = useLanguage()
 
   return (
     <section className="construction-services" id="construction-services">
       <div className="construction-services-container">
         <div className="services-header">
-          <h2 className="services-section-title">StockYamo Go-To-Market Focus</h2>
-          <p className="services-section-subtitle">
-            StockYamo is our current flagship product: a practical inventory and sales control system for local businesses that need the information and access larger companies already use.
-          </p>
+          <h2 className="services-section-title">{t.solutions.title}</h2>
+          <p className="services-section-subtitle">{t.solutions.subtitle}</p>
         </div>
 
         <div className="services-layout">
