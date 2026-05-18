@@ -104,7 +104,7 @@ const About = () => {
             <button className="about-cta-button">
               <span>{t.about.cta}</span>
               <ArrowRight size={20} />
-            </a>
+            </button>
           </div>
 
           <div className="about-hero-right">

@@ -35,7 +35,7 @@ const Testimonials = () => {
             <button className="testimonials-cta-button">
               <span>{t.testimonials.cta}</span>
               <ArrowRight size={20} />
-            </a>
+            </button>
           </div>
 
           <div className="testimonials-right">
