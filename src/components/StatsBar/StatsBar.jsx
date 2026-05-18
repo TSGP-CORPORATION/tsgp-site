@@ -30,10 +30,10 @@ const StatsBar = () => {
   const statsRef = useRef(null)
 
   const stats = [
-    { value: 99, suffix: '%', label: 'Client Satisfaction' },
-    { value: 2, suffix: '', label: 'Successful Projects' },
-    { value: 1, suffix: 'k', label: 'Happy Clients' },
-    { value: 1, suffix: '+', label: 'Years of Experience' }
+    { value: 1, suffix: '', label: 'Flagship Product' },
+    { value: 3, suffix: '', label: 'Pilot Goal' },
+    { value: 20, suffix: '', label: 'Field Visits' },
+    { value: 90, suffix: '', label: 'Day Plan' }
   ]
 
   useEffect(() => {

@@ -37,6 +37,15 @@ const Projects = () => {
     return () => observers.forEach(observer => observer.disconnect())
   }, [])
 
+  const openProject = (link) => {
+    if (link.startsWith('#')) {
+      document.querySelector(link)?.scrollIntoView({ behavior: 'smooth' })
+      return
+    }
+
+    window.open(link, '_blank')
+  }
+
   return (
     <section className="projects" id="projects">
       <div className="projects-container">
@@ -67,7 +76,7 @@ const Projects = () => {
                 <div className="project-card-overlay">
                   <span className="project-card-category">{project.category}</span>
                   <p className="project-card-description">{project.description}</p>
-                  <button className="project-card-button" onClick={() => window.open(project.link, '_blank')}>
+                  <button className="project-card-button" onClick={() => openProject(project.link)}>
                     <ArrowRight size={24} />
                   </button>
                 </div>

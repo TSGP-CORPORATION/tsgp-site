@@ -38,7 +38,7 @@ const ServiceDetails = ({ activeService }) => {
       <button className="service-cta-button">
         <span>{t.solutions.readMore}</span>
         <ArrowRight size={20} />
-      </button>
+      </a>
     </div>
   )
 }

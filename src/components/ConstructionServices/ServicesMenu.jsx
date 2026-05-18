@@ -20,17 +20,18 @@ const ServicesMenu = ({ activeService, setActiveService }) => {
       {menuItems.map((item, index) => {
         const Icon = item.icon
         return (
-          <div
+          <button
             key={item.id}
             className={`menu-item ${activeService === item.id ? 'active' : ''}`}
             onClick={() => setActiveService(item.id)}
             style={{ animationDelay: `${index * 0.1}s` }}
+            type="button"
           >
             <div className="menu-icon">
               <Icon size={24} />
             </div>
             <span className="menu-label">{item.label}</span>
-          </div>
+          </button>
         )
       })}
     </div>
