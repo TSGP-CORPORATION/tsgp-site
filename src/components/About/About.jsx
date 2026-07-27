@@ -108,7 +108,6 @@ const About = () => {
           </div>
 
           <div className="about-hero-right">
-            <div className="about-image-frame"></div>
             <div className="about-image-wrapper">
               <img
                 src="/WhatsApp Image 2026-03-01 at 23.02.29.jpeg"

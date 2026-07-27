@@ -40,11 +40,9 @@ const Testimonials = () => {
 
           <div className="testimonials-right">
             <div className="testimonials-image-wrapper">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgUKvTXYnPfUo3RIYujNfQcEiIgP_EiJ0z9A&s"
-                alt={t.testimonials.imageAlt}
-                className="testimonials-image"
-              />
+              <div className="testimonials-visual">
+                <span className="testimonials-visual-quote">"</span>
+              </div>
               <TestimonialCard
                 testimonial={testimonials[currentIndex]}
                 onPrev={handlePrev}
